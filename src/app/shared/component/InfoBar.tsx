@@ -1,0 +1,16 @@
+import * as React from 'react';
+import { Alert, Row, Col } from 'react-bootstrap';
+
+type InfoBarProps = {
+  message?: string | React.ReactElement
+};
+
+export const InfoBar: React.FC<InfoBarProps> = ({ message }) => {
+  return (
+    <Row className="justify-content-md-center">
+      <Col md={4} >
+        <Alert variant="info">{message || ''}</Alert>
+      </Col>
+    </Row>
+  );
+};

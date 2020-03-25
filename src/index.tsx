@@ -2,15 +2,14 @@ import * as React from 'react';
 import * as ReactDOM from "react-dom";
 // import {Provider} from 'react-redux';
 
-import App from "./component/App";
-// import store from './store/store';
+import App from "./app/App";
 
 
 import './index.scss';
 
+const  wrapper  = <App />
 {/* <Provider store={store}>
-</Provider> */}
+                    <App />
+                  </Provider> */}
 
-ReactDOM.render(
-  <App />
-, document.getElementById('root'));
+ReactDOM.render( wrapper, document.getElementById('root'));

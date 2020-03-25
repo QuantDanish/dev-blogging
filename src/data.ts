@@ -1,20 +1,21 @@
+import * as React from 'react';
 import reactImage from './assets/images/react.png';
 import reduxImage from './assets/images/redux.png';
 
-import IBlog from './interface/IBlog';
+// import IBlog from './shared/interface/IBlog';
 
 
 
-const data: IBlog[] = [
+const data: any[] = [
   {
     index: 1,
     title: `It's React`,
     content: `"React has been designed from the start for gradual adoption, and
-     &lt;b&gt; you can use as little or as much React as you need&lt;/b&gt; . Whether you want to get a taste of React, add
+     you can use as little or as much React as you need. Whether you want to get a taste of React, add
     some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help
     you get started."`,
     image: reactImage,
-    author:'Mohammad Danish',
+    author:'John Wick',
     createdOn: new Date(),
   },
   {
@@ -26,9 +27,12 @@ const data: IBlog[] = [
     
     You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.`,
     image: reduxImage,
-    author:'Mohammad Danish',
+    author:'John Wick',
     createdOn: new Date(),
   }
 ]
 
+
 export default data;
+
+

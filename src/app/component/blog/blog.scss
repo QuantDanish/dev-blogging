@@ -1,24 +1,27 @@
 .blog-component {
-  text-align: center;
-  margin: 5vh auto;
-  >h1 {
+  
+  .blog-content {
+    text-align: center;
+    margin: 5vh auto;
+    padding: 10px;
+  }
+
+  h1 {
     font-family: 'Courier New', Courier, monospace;
   }
-  > p {
+  .blog-content {
     font-family: 'Montserrat-Medium';
-    font-size: 22px;
+    font-size: 16px;
     line-height: 2;
     text-align: justify;
   }
 
-  > .image {
+  img {
     margin: auto;
     height: 300px;
   }
 
-  > hr {
+  hr {
     margin-top: 10vh;
   }
-
-
 }
