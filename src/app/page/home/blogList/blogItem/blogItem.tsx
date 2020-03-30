@@ -1,5 +1,5 @@
 import * as React from 'react';
-import IBlog from '../../../../shared/interface/IBlog';
+import IBlog from '../../../../common/interface/IBlog';
 import { Card } from 'react-bootstrap';
 import { Link, useRouteMatch } from 'react-router-dom';
 

@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Alert, Row, Col } from 'react-bootstrap';
 
-type InfoBarProps = {
-  message?: string | React.ReactElement
-};
 
-export const InfoBar: React.FC<InfoBarProps> = ({ message }) => {
+import { InfoBarProps } from './types';
+
+
+
+const InfoBar: React.FC<InfoBarProps> = ({ message }) => {
   return (
     <Row className="justify-content-md-center">
       <Col md={4} >
@@ -14,3 +15,5 @@ export const InfoBar: React.FC<InfoBarProps> = ({ message }) => {
     </Row>
   );
 };
+
+export default InfoBar;

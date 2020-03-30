@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Row } from 'react-bootstrap';
-import IBlog from '../../../shared/interface/IBlog';
+import IBlog from '../../../common/interface/IBlog';
 import BlogItem from './blogItem/blogItem';
 
 const filterItems = ():IBlog[] => {
