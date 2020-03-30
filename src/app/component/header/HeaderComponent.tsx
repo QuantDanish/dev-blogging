@@ -2,10 +2,13 @@ import * as React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
+
+import './header.scss';
+
 const Header = () => {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="header-component" bg="light" expand="lg">
         <Navbar.Brand href="/">Dev Blogging</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
