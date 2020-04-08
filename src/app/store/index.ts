@@ -1,16 +1,18 @@
-// import configureStore from './reducer';
-// import db from '../../data';
-// import IBlog from '../shared/interface/IBlog';
+import { compose, createStore, applyMiddleware } from 'redux';
+import thunk, { ThunkMiddleware } from 'redux-thunk';
 
-// console.log("store/index.js ", db[0]);
+import reducer from './rootReducer';
+import { HomeActionType } from '../page/home/duck';
+import { BlogActionType } from '../page/blog/duck/types';
 
+export type AppAction = HomeActionType | BlogActionType;
 
-// const store = configureStore({
-//   currentBlog: {
-//     data: db[0] as IBlog,
-//     error: null,
-//     loading: false
-//   }
-// });
+const tool = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose;
 
-// export default store;
+const composeEnhancer = tool || compose;
+
+const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk as ThunkMiddleware<AppState, AppAction>)));
+
+export type AppState = ReturnType<typeof reducer>;
+
+export default store;

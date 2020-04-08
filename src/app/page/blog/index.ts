@@ -1,4 +1,3 @@
-import Blog from './BlogComponent';
+import BlogContainer from './BlogContainer';
 
-export default Blog;
-
+export default BlogContainer;

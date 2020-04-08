@@ -3,23 +3,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-
 module.exports = {
-  entry: './src/index.tsx',
+  entry: {
+    app: ['./src/index.tsx'],
+  },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
   },
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js'],
   },
 
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+    },
   },
 
   module: {
@@ -27,11 +28,11 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         use: 'ts-loader',
-        exclude: '/node_modules/'
+        exclude: '/node_modules/',
       },
       {
         test: /\.(c|sc|sa)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
@@ -40,10 +41,10 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: 'assets/images/[name].[ext]'
-            }
-          }
-        ]
+              name: 'assets/images/[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg|)(\?v=\d+\.\d+\.\d+)?$/,
@@ -52,23 +53,27 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/fonts/'
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'assets/fonts/',
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css'
+      chunkFilename: '[id].[hash].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/public/index.html',
-      favicon: './src/public/favicon.ico'
-    })
-  ]
+      favicon: './src/public/favicon.ico',
+    }),
+  ],
+
+  devServer: {
+    historyApiFallback: true,
+  },
 };
