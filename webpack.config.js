@@ -8,6 +8,17 @@ module.exports = {
     app: ['./src/index.tsx'],
   },
 
+  resolve: {
+    alias: {
+      Component: path.resolve(__dirname, 'src', 'app', 'component'),
+      Hoc: path.resolve(__dirname, 'src', 'app', 'component', 'hoc'),
+      Util: path.resolve(__dirname, 'src', 'app', 'common', 'util'),
+      Service: path.resolve(__dirname, 'src', 'app', 'common', 'service'),
+      Type: path.resolve(__dirname, 'src', 'app', 'common', 'type'),
+      Model: path.resolve(__dirname, 'src', 'app', 'common', 'model'),
+    },
+  },
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',

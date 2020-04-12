@@ -1,0 +1,7 @@
+const top: ScrollToOptions = {
+  left: 0,
+  top: 0,
+  behavior: 'smooth',
+};
+
+export const scrollToTop = () => window.scrollTo(top);

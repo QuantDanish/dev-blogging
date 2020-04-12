@@ -9,6 +9,9 @@ type BlogItemProps = {
   blog: IBlog;
 };
 
+const generateUrl = (baseUrl: string, id: number) =>
+  [baseUrl, 'blog/', id].join('');
+
 const BlogItem: React.FC<BlogItemProps> = ({ blog }) => {
   let match = useRouteMatch();
   return (
@@ -18,11 +21,19 @@ const BlogItem: React.FC<BlogItemProps> = ({ blog }) => {
         <Card.Title>
           <h3>{blog.title}</h3>
         </Card.Title>
+        <p className='text-muted'>{blog.synopsis || ''}</p>
         <p>
           <b>By: </b>
           {blog.author}
         </p>
-        <Link to={`${match.url}blog/${blog.index}`}>Read...</Link>
+        <div className='p-1'>
+          <Link
+            className='btn w-100 btn-outline-primary'
+            to={generateUrl(match.url, blog.index)}
+          >
+            Read full blog
+          </Link>
+        </div>
       </Card.Body>
     </Card>
   );

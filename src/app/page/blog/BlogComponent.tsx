@@ -8,22 +8,17 @@ const Blog: React.FC<BlogProps> = ({ blog }) => {
   const { index, title, image, content, author, createdOn } = blog;
   return (
     <Container className='blog-component'>
-      Blog id : {index}
-      <h1 className='text-center'>{title}</h1>
+      <h1 className='py-2 text-center'>{title}</h1>
       <Row className='justify-content-around'>
-        <Col lg={10}>
-          <Row className='justify-content-around'>
-            <img src={image} alt='no image' />
-          </Row>
-        </Col>
+        <img src={image} alt='no image' />
       </Row>
       <Row className='justify-content-around'>
-        <Col className='blog-content' lg={10}>
+        <Col className='blog-content' lg={11}>
           {content}
         </Col>
       </Row>
       <Row className='justify-content-around'>
-        <Col lg={10}>
+        <Col lg={11}>
           <p className='mt-1'>
             By <b>{author}</b>
           </p>

@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 import { IBlog } from '../../../common/interface';
-import { LOAD_BLOG, SET_SUCCESS, SET_ERROR } from './actionType';
+import { LOAD_BLOG, SET_SUCCESS, SET_ERROR, CLEAR } from './actionType';
 
 /*********	blog state type	***********/
 export interface BlogState {
@@ -24,8 +24,14 @@ export interface SetSuccessAction extends Action<typeof SET_SUCCESS> {
   blog: IBlog;
 }
 
+export interface ResetStateAction extends Action<typeof CLEAR> {}
+
 /*********	blog actions union	***********/
-export type BlogActionType = LoadBlogAction | SetErrorAction | SetSuccessAction;
+export type BlogActionType =
+  | LoadBlogAction
+  | SetErrorAction
+  | SetSuccessAction
+  | ResetStateAction;
 
 /*********	blog reducer type	***********/
 export type BlogReducer = (

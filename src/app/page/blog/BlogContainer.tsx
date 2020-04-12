@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import { useParams } from 'react-router-dom';
 
-import PageLoader from '../../component/pageLoader';
 import {
   getBlogByIndex,
   BlogState,
@@ -11,13 +10,20 @@ import {
   BlogActionType,
   setSuccess,
   setError,
+  resetState,
 } from './duck';
 import { AppState } from '../../store';
 import { ISelector } from '../../common/interface';
 import Blog from './BlogComponent';
+import { WithLoader } from '../../component/hoc/withLoader';
+import { scrollToTop } from '../../common/util';
 
 const selectBlogState: ISelector<AppState, BlogState> = (state: AppState) =>
   state.blog;
+
+const onUnMount = (dispatch: Dispatch<BlogActionType>) => {
+  dispatch(resetState());
+};
 
 const BlogContainer: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -26,17 +32,20 @@ const BlogContainer: React.FC = () => {
   const dispatch = useDispatch<Dispatch<BlogActionType>>();
 
   React.useEffect(() => {
+    scrollToTop();
     dispatch(loadBlog());
     getBlogByIndex(+id)
       .then((blog) => dispatch(setSuccess(blog)))
       .catch((e) => dispatch(setError(['Error while fetching required blog'])));
-  }, []);
 
-  if (state.loading) {
-    return <PageLoader message='Please wait while blog is loading' />;
-  } else {
-    return <Blog blog={state.blog} />;
-  }
+    return () => onUnMount(dispatch);
+  }, []);
+  console.log('[BlogContainer is going to render on UI]');
+  return (
+    <WithLoader loading={state.loading}>
+      <Blog blog={state.blog} />
+    </WithLoader>
+  );
 };
 
 export default BlogContainer;
