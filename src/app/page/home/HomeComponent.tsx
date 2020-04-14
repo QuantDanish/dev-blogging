@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { HomeState, homeService, actionCreator, HomeActionType } from './duck';
@@ -31,11 +31,9 @@ const Home: React.FC = () => {
 
   return (
     <WithLoader loading={loading}>
-      <Row className='home-component'>
-        <Col xs={12}>
-          <BlogList blogs={blogs} />
-        </Col>
-      </Row>
+      <Container className='home-component'>
+        <BlogList blogs={blogs} />
+      </Container>
     </WithLoader>
   );
 };

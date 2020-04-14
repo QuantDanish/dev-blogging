@@ -1,9 +1,7 @@
 import * as React from 'react';
 import IBlog from '../../../../common/interface/IBlog';
-import { Card } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 import { Link, useRouteMatch } from 'react-router-dom';
-
-import './blogItem.scss';
 
 type BlogItemProps = {
   blog: IBlog;
@@ -15,27 +13,38 @@ const generateUrl = (baseUrl: string, id: number) =>
 const BlogItem: React.FC<BlogItemProps> = ({ blog }) => {
   let match = useRouteMatch();
   return (
-    <Card className='blog-item-component'>
-      <Card.Img variant='top' src={blog.image} />
-      <Card.Body>
-        <Card.Title>
-          <h3>{blog.title}</h3>
-        </Card.Title>
-        <p className='text-muted'>{blog.synopsis || ''}</p>
-        <p>
-          <b>By: </b>
-          {blog.author}
-        </p>
-        <div className='p-1'>
-          <Link
-            className='btn w-100 btn-outline-primary'
-            to={generateUrl(match.url, blog.index)}
-          >
-            Read full blog
-          </Link>
-        </div>
-      </Card.Body>
-    </Card>
+    <Row className='blog-item-component justify-content-around my-5'>
+      <Col md={10}>
+        <Card>
+          <Card.Body>
+            <Row>
+              <Col md={3}>
+                <img className='w-100' src={blog.image} />
+              </Col>
+              <Col md={9}>
+                <div className='h-100 d-flex flex-column justify-content-between'>
+                  <div className='flex-fill my-1'>
+                    <h3>{blog.title}</h3>
+                  </div>
+                  <div className='flex-fill my-1 text-muted'>
+                    {blog.synopsis || ''}
+                  </div>
+                  <div className='flex-fill my-1 align-bottom'>
+                    <span className='text-muted'>author</span>: {blog.author}
+                    <Link
+                      className='float-right btn btn-outline-primary'
+                      to={generateUrl(match.url, blog.index)}
+                    >
+                      Read full blog
+                    </Link>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 
