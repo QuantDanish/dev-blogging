@@ -15,7 +15,7 @@ import {
 import { AppState } from '../../store';
 import { ISelector } from '../../common/interface';
 import Blog from './BlogComponent';
-import { WithLoader } from '../../component/hoc/withLoader';
+import { WithLoader } from '../../component/hoc';
 import { scrollToTop } from '../../common/util';
 
 const selectBlogState: ISelector<AppState, BlogState> = (state: AppState) =>

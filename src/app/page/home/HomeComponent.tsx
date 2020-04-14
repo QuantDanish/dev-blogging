@@ -5,9 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { HomeState, homeService, actionCreator, HomeActionType } from './duck';
 import { AppState } from '../../store';
 import BlogList from './blogList/BlogListComponent';
-import { IBlog, ISelector } from '../../common/interface';
 import { Dispatch } from 'redux';
-import WithLoader from '../../component/hoc/withLoader/WithLoaderComponent';
+import { ISelector, IBlog } from '../../common/interface';
+import { WithLoader } from '../../component/hoc';
 
 const selectBlogs: ISelector<AppState, HomeState> = (state: AppState) =>
   state.home;

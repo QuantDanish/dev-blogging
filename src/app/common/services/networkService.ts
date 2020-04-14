@@ -4,8 +4,10 @@ import { IBlog } from '../interface';
 const get = (): Promise<IBlog[]> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(data);
-    }, 3000);
+      resolve(
+        (data as IBlog[]).sort((b1: IBlog, b2: IBlog) => b1.index - b2.index)
+      );
+    }, 100);
   });
 };
 

@@ -4,13 +4,15 @@
   "license": "Open-Source",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --https",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "prod": "node ./server/server.js"
   },
   "dependencies": {
     "@types/react-redux": "^7.1.5",
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
     "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
