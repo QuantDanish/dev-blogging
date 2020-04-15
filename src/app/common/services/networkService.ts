@@ -7,7 +7,7 @@ const get = (): Promise<IBlog[]> => {
       resolve(
         (data as IBlog[]).sort((b1: IBlog, b2: IBlog) => b1.index - b2.index)
       );
-    }, 100);
+    }, 1000);
   });
 };
 

@@ -3,14 +3,8 @@ import { Form, FormGroup, Button } from 'react-bootstrap';
 
 const logFormValue = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-  let data = {};
-  // (e.target as HTMLFormElement).children.forEach((element: HTMLElement) => {
-  //   if (element.tagName === 'input') {
-  //     data[element.nodeName] = element.nodeValue;
-  //   }
-  // });
 
-  // console.log(data);
+  console.log('form submitted');
 };
 
 const SingUpForm: React.FC<any> = ({}) => {

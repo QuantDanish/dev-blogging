@@ -7,6 +7,11 @@ const SignUp: React.FC<any> = ({}) => {
   return (
     <Container className='sign-up-component'>
       <Row className='justify-content-around'>
+        <Col md={5}>
+          <h2 className='text-center mt-5'>Sign up to Dev Blogging</h2>
+        </Col>
+      </Row>
+      <Row className='justify-content-around'>
         <Col md={5} className='mt-5 align-middle'>
           <Card>
             <Card.Body className='my-3 p-3'>
