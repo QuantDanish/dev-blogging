@@ -34,7 +34,7 @@ const SingUpForm: React.FC<any> = ({}) => {
         <Form.Text className='muted-text'></Form.Text>
       </FormGroup>
 
-      <Button className='w-100 mt-5' variant='outline-primary' type='submit'>
+      <Button className='w-100 mt-5' variant='outline-success' type='submit'>
         Sign Up
       </Button>
     </Form>

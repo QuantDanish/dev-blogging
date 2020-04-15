@@ -13,10 +13,10 @@ import {
   resetState,
 } from './duck';
 import { AppState } from '../../store';
-import { ISelector } from '../../common/interface';
+import { ISelector } from 'Types';
+import { WithLoader } from 'Hoc';
+import { scrollToTop } from 'Utils/';
 import Blog from './BlogComponent';
-import { WithLoader } from '../../component/hoc';
-import { scrollToTop } from '../../common/util';
 
 const selectBlogState: ISelector<AppState, BlogState> = (state: AppState) =>
   state.blog;

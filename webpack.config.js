@@ -10,22 +10,20 @@ module.exports = {
 
   resolve: {
     alias: {
+      Common: path.resolve(__dirname, 'src/app/common/'),
+      Hoc: path.resolve(__dirname, 'src/app/component/hoc'),
       Components: path.resolve(__dirname, 'src/app/component/'),
       Utils: path.resolve(__dirname, 'src/app/common/util/'),
       Services: path.resolve(__dirname, 'src/app/common/services/'),
       Types: path.resolve(__dirname, 'src/app/common/interface/'),
       Models: path.resolve(__dirname, 'src/app/common/model/'),
     },
-    extensions: ['.ts', '.tsx', '.scss'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.css'],
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-  },
-
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
   },
 
   optimization: {

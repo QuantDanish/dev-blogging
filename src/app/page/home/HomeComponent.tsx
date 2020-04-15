@@ -6,8 +6,8 @@ import { HomeState, homeService, actionCreator, HomeActionType } from './duck';
 import { AppState } from '../../store';
 import BlogList from './blogList/BlogListComponent';
 import { Dispatch } from 'redux';
-import { ISelector, IBlog } from '../../common/interface';
-import { WithLoader } from '../../component/hoc';
+import { WithLoader } from 'Hoc';
+import { ISelector, IBlog } from 'Types';
 
 const selectBlogs: ISelector<AppState, HomeState> = (state: AppState) =>
   state.home;
