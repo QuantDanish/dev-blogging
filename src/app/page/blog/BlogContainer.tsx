@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import { useParams } from 'react-router-dom';
 
+import { ISelector } from 'Types';
+import { WithLoader } from 'Hoc';
+import { scrollToTop } from 'Utils/';
+import { AppState } from '../../store';
 import {
   getBlogByIndex,
   BlogState,
@@ -12,10 +16,6 @@ import {
   setError,
   resetState,
 } from './duck';
-import { AppState } from '../../store';
-import { ISelector } from 'Types';
-import { WithLoader } from 'Hoc';
-import { scrollToTop } from 'Utils/';
 import Blog from './BlogComponent';
 
 const selectBlogState: ISelector<AppState, BlogState> = (state: AppState) =>

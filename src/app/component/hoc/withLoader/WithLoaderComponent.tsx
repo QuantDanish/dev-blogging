@@ -8,7 +8,7 @@ const WithLoader: React.FC<React.PropsWithChildren<WithLoaderProps>> = ({
   loading,
   children,
 }) => {
-  return loading ? <PageLoader message='loading' /> : <>{children}</>;
+  return loading ? <PageLoader message="loading" /> : <>{children}</>;
 };
 
 export default WithLoader;

@@ -1,12 +1,7 @@
 import * as React from 'react';
-import PageLoader from '../../component/pageLoader/PageLoaderComponent';
 
-const Profile: React.FC<any> = ({}) => {
-  return (
-    <div className='profile-component'>
-      <PageLoader message='User Profile' />
-    </div>
-  );
+const Profile: React.FC = () => {
+  return <div className="profile-component" />;
 };
 
 export default Profile;

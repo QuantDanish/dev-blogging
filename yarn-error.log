@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Mohd Danish\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-addon-perf
+  C:\Program Files\nodejs\node.exe C:\Users\Mohd Danish\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add eslint eslint-config-airbnb eslint-airbnb-typescript eslint-config-prettier eslint-config-react-app eslint-import-resolver-typescript eslint-loader eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react-hooks babel-eslint
 
 PATH: 
-  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Mohd Danish\AppData\Roaming\npm;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\Mohd Danish\AppData\Local\Microsoft\WindowsApps;C:\Users\Mohd Danish\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Users\Mohd Danish\.dotnet\tools;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Mohd Danish\AppData\Roaming\npm;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Mohd Danish\AppData\Local\Microsoft\WindowsApps;C:\Users\Mohd Danish\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Users\Mohd Danish\.dotnet\tools;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
 
 Yarn version: 
   1.21.1
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-addon-perf: Not found
+  Error: https://registry.yarnpkg.com/eslint-airbnb-typescript: Not found
       at Request.params.callback [as _callback] (C:\Users\Mohd Danish\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66947:18)
       at Request.self.callback (C:\Users\Mohd Danish\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140665:22)
       at Request.emit (events.js:182:13)
@@ -33,13 +33,15 @@ npm manifest:
     "license": "Open-Source",
     "scripts": {
       "start": "webpack-dev-server --mode development --open --hot --https",
-      "build": "webpack --mode production"
+      "build": "webpack --mode production",
+      "prod": "node ./server/server.js"
     },
     "dependencies": {
       "@types/react-redux": "^7.1.5",
       "@types/redux": "^3.6.0",
       "@types/redux-thunk": "^2.1.0",
       "bootstrap": "^4.4.1",
+      "express": "^4.17.1",
       "react": "^16.12.0",
       "react-bootstrap": "^1.0.0-beta.16",
       "react-dom": "^16.12.0",

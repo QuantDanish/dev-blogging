@@ -2,7 +2,7 @@ export default interface IBlog {
   index: number;
   title: string;
   content: string;
-  image?: string | any;
+  image?: string;
   synopsis: string;
   author: string;
   createdOn: Date;

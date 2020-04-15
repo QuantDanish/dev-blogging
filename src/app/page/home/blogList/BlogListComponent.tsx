@@ -10,8 +10,8 @@ export interface BlogListProps {
 const BlogList: React.FC<BlogListProps> = ({ blogs }) => {
   return (
     <>
-      {blogs.map((blog, index) => (
-        <BlogItem key={index} blog={blog} />
+      {blogs.map((blog) => (
+        <BlogItem key={blog.index} blog={blog} />
       ))}
     </>
   );

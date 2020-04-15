@@ -1,3 +1,3 @@
-import AppRoute from "./AppRouteComponent";
+import AppRoute from './AppRouteComponent';
 
 export default AppRoute;

@@ -1,3 +1,3 @@
 export type InfoBarProps = {
-  message?: string | React.ReactElement
+  message?: string | React.ReactElement;
 };

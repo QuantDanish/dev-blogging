@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Row, Col, Container, Alert } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 
 const style = {
   errorCode: {
@@ -11,10 +11,10 @@ const style = {
   },
 };
 
-const NotFound: React.FC<any> = ({}) => {
+const NotFound: React.FC = () => {
   return (
-    <Container className='not-found-component'>
-      <Row className='justify-content-around'>
+    <Container className="not-found-component">
+      <Row className="justify-content-around">
         <Col md={6}>
           <p style={style.errorCode}>404</p>
           <p style={style.message}>

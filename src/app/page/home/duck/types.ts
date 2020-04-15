@@ -5,7 +5,7 @@ export interface HomeState extends IStatus {
   blogs?: IBlog[];
 }
 
-/*********	Action Creator Types	***********/
+/** Action Creator Types	********** */
 export interface FetchBlogsAction extends IAction<typeof FETCH_BLOGS> {}
 
 export interface SetSuccessAction extends IAction<typeof SUCCESS> {
@@ -16,10 +16,13 @@ export interface SetFailureAction extends IAction<typeof FAILURE> {
   error?: string[];
 }
 
-/*********	Export action creator type union	***********/
-export type HomeActionType = FetchBlogsAction | SetSuccessAction | SetFailureAction;
+/** *******	Export action creator type union	********** */
+export type HomeActionType =
+  | FetchBlogsAction
+  | SetSuccessAction
+  | SetFailureAction;
 
-/*********	Prop types	***********/
+/** *******	Prop types	********** */
 export interface HomePropTypes {
   blogs: IBlog[];
 }

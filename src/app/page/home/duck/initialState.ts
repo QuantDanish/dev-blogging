@@ -1,12 +1,12 @@
-import { HomeState } from "./types";
-import { IBlog } from "../../../common/interface";
+import { HomeState } from './types';
+import { IBlog } from '../../../common/interface';
 
 const initialState: HomeState = {
-  blogs : [] as IBlog[],
-  loading:  true,  
+  blogs: [] as IBlog[],
+  loading: true,
   failure: false,
   success: false,
-  error: null
-}
+  error: null,
+};
 
 export default initialState;

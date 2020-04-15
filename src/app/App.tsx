@@ -9,7 +9,7 @@ import './app.scss';
 
 const App: React.FC = () => {
   return (
-    <div className='app-component'>
+    <div className="app-component">
       <BrowserRouter>
         <Header />
         <AppRoute />
