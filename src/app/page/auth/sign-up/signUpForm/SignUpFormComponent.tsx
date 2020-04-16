@@ -1,42 +1,73 @@
 import * as React from 'react';
-import { Form, FormGroup, Button } from 'react-bootstrap';
+import { Form, Button, Input } from 'Components/core';
 import { log } from 'Services/loggerService';
-
-const logFormValue = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  log('form submitted');
-};
+import {
+  required,
+  isEmail,
+  gt,
+  samePassword,
+  weekPassword,
+} from 'Utils/validation';
 
 const SingUpForm: React.FC = () => {
+  const form = React.useRef(null);
+  const logFormValue = (e: React.FormEvent<HTMLFormElement>) => {
+    const f = form.current as HTMLFormElement;
+    log(f.getValues());
+    log('form submitted');
+    e.preventDefault();
+  };
   return (
-    <Form className="singUpForm" onSubmit={logFormValue}>
-      <FormGroup controlId="first-name">
-        <Form.Control size="lg" type="text" placeholder="First Name" />
-      </FormGroup>
-      <FormGroup controlId="last-name">
-        <Form.Control size="lg" type="text" placeholder="Last Name" />
-      </FormGroup>
-      <FormGroup controlId="email">
-        <Form.Control
-          size="lg"
+    <Form ref={form} className="singUpForm form" onSubmit={logFormValue}>
+      <div className="form-group">
+        <Input
+          name="firstName"
+          className="form-control form-control-lg"
+          type="text"
+          placeholder="First Name"
+          minLength={3}
+          validations={[required, gt]}
+        />
+      </div>
+      <div className="form-group">
+        <Input
+          name="lastName"
+          className="form-control form-control-lg"
+          type="text"
+          placeholder="Last Name"
+          minLength={3}
+          validations={[required, gt]}
+        />
+      </div>
+      <div className="form-group">
+        <Input
+          name="email"
+          className="form-control form-control-lg"
           type="email"
-          placeholder="Enter your email id"
+          placeholder="Email Id"
+          validations={[required, isEmail]}
         />
-      </FormGroup>
-
-      <FormGroup controlId="password">
-        <Form.Control size="lg" type="password" placeholder="Enter password" />
-      </FormGroup>
-      <FormGroup controlId="confirm-password">
-        <Form.Control
-          size="lg"
+      </div>
+      <div className="form-group">
+        <Input
+          name="password"
+          className="form-control form-control-lg"
           type="password"
-          placeholder="Re-enter password"
+          placeholder="Password"
+          validations={[required, weekPassword, samePassword]}
         />
-        <Form.Text className="muted-text" />
-      </FormGroup>
+      </div>
+      <div className="form-group">
+        <Input
+          name="confirmPassword"
+          className="form-control form-control-lg"
+          type="password"
+          placeholder="Re-enter Password"
+          validations={[required, samePassword]}
+        />
+      </div>
 
-      <Button className="w-100 mt-5" variant="outline-success" type="submit">
+      <Button className="btn btn-success w-100 mt-5" type="submit">
         Sign Up
       </Button>
     </Form>
