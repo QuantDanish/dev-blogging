@@ -1,13 +1,16 @@
 import * as React from 'react';
 
-const At: React.FC = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const At: React.FC<any> = (props) => {
+  const passedClasses = props && props.className ? props.className : '';
+  const className = ['bi bi-at', passedClasses].join(' ');
   return (
     <svg
-      className="bi bi-at"
+      className={className}
       width="1em"
       height="1em"
       viewBox="0 0 16 16"
-      fill="#0000"
+      {...props}
     >
       <path
         fillRule="evenodd"

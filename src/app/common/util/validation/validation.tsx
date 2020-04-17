@@ -92,3 +92,14 @@ export const samePassword = (
 
   return raiseError(different, 'Passwords are not equal');
 };
+
+export const isUrl = (value: string) => {
+  const options: validator.IsURLOptions = {
+    protocols: ['http', 'https'],
+    require_protocol: true,
+  };
+  const invalid = !(
+    validator.isEmpty(value) || validator.isURL(value, options)
+  );
+  return raiseError(invalid, 'Not a valid url');
+};

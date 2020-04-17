@@ -16,7 +16,7 @@ import './appRoute.scss';
 
 const AppRoute: React.FC = () => {
   return (
-    <div className="app-route-component">
+    <div className="d-flex app-route-component">
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/blog/:id" component={BlogContainer} />

@@ -7,7 +7,7 @@ import './header.scss';
 const Header = () => {
   return (
     <>
-      <Navbar className="header-component" bg="light" expand="lg">
+      <Navbar className="header-component" bg="light" expand="md">
         <Navbar.Brand href="/">Dev Blogging</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
