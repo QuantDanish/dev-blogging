@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
-import profileImg from 'Components/../assets/images/account.png';
+import { Link } from 'react-router-dom';
+import profileImg from '../../assets/images/boy-avtar.png';
 
 const Profile: React.FC = () => {
   return (
@@ -11,6 +12,9 @@ const Profile: React.FC = () => {
             <Row>
               <Col className="border-right p-3" md={4}>
                 <img className="rounded-circle w-100" src={profileImg} alt="" />
+                <Link to="#">
+                  <div className="pt-2 text-center text-muted">Change</div>
+                </Link>
               </Col>
               <Col className="p-3" md={8}>
                 <div className="p-1 text-uppercase h1">Mohd Danish</div>

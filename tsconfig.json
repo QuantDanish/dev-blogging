@@ -9,11 +9,17 @@
     "allowSyntheticDefaultImports": false,
     "baseUrl": "./",
     "paths": {
-      "Components/*": ["src/app/component/*"],
-      "Hoc/*": ["src/app/component/hoc/*"],
-      "Services/*": ["src/app/common/services/*"],
-      "Types/*": ["src/app/common/interface/*"],
-      "Utils/*": ["src/app/common/util/*"]
+      "Components/*": ["src/app/component/index.ts", "src/app/component/*"],
+      "Hoc/*": ["src/app/component/hoc/index.ts", "src/app/component/hoc/*"],
+      "Services/*": [
+        "src/app/common/services/index.ts",
+        "src/app/common/services/*"
+      ],
+      "Types/*": [
+        "src/app/common/interface/index.ts",
+        "src/app/common/interface/*"
+      ],
+      "Utils/*": ["src/app/common/util/index.ts", "src/app/common/util/*"]
     },
     "jsx": "react",
     "allowJs": true

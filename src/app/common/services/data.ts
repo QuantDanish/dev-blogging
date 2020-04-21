@@ -14,7 +14,7 @@ const data = [
     you get started."`,
     synopsis:
       'interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help...',
-    image: ['/', reactImage].join(''),
+    image: reactImage,
     author: 'John Wick',
     createdOn: new Date(),
   },
@@ -28,7 +28,7 @@ const data = [
     You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.`,
     synopsis:
       'interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help...',
-    image: ['/', reduxImage].join(''),
+    image: reduxImage,
     author: 'John Wick',
     createdOn: new Date(),
   },
@@ -41,7 +41,7 @@ const data = [
     you get started."`,
     synopsis:
       'interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help...',
-    image: ['/', reactImage].join(''),
+    image: reactImage,
     author: 'John Wick',
     createdOn: new Date(),
   },
@@ -55,7 +55,7 @@ const data = [
     You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.`,
     synopsis:
       'You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies),...',
-    image: ['/', reduxImage].join(''),
+    image: reduxImage,
     author: 'John Wick',
     createdOn: new Date(),
   },
@@ -68,7 +68,7 @@ const data = [
     you get started."`,
     synopsis: `React has been designed from the start for gradual adoption, and
      you can use as little or as much React as you need.`,
-    image: ['/', reactImage].join(''),
+    image: reactImage,
     author: 'John Wick',
     createdOn: new Date(),
   },
@@ -83,7 +83,7 @@ const data = [
     synopsis: `Redux is a predictable state container for JavaScript apps.
 
     It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience,..`,
-    image: ['/', reduxImage].join(''),
+    image: reduxImage,
     author: 'John Wick',
     createdOn: new Date(),
   },
